@@ -15,9 +15,12 @@ gem 'sqlite3', '~> 1.6.6'
 gem 'stimulus-rails'
 gem 'turbo-rails'
 gem 'tzinfo-data', platforms: %i[ mingw mswin x64_mingw jruby ]
+gem 'sneakers'
+gem 'bunny'
 
 group :development, :test do
   gem 'debug', platforms: %i[ mri mingw x64_mingw ]
+  gem 'pry'
 end
 
 group :development do
