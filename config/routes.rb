@@ -4,4 +4,6 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root 'logs#index'
+
+  get "logs/user/:user_id" => "logs#by_user"
 end
