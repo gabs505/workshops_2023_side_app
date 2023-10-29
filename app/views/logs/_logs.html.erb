@@ -1,27 +1,31 @@
 <div class="shadow overflow-hidden rounded border-b border-gray-200">
   <table class="min-w-full bg-white">
     <thead class="bg-gray-800 text-white">
-      <tr>
-        <th id="logs-user-id" class="text-left py-3 px-6 uppercase font-semibold text-sm hover:cursor-pointer">
-          <span>User_id</span>
-        </th>
-        <th id="logs-data" class="text-left py-3 px-6 uppercase font-semibold text-sm hover:cursor-pointer">
-          <span>Data</span>
-        </th>
-        <th id="logs-created-at" class="text-left py-3 px-6 uppercase font-semibold text-sm hover:cursor-pointer">
-          <span>Created_at</span>
-        </th>
-      </tr>
+    <tr>
+      <th id="logs-user-id" class="text-left py-3 px-6 uppercase font-semibold text-sm hover:cursor-pointer">
+        <span>User_id</span>
+      </th>
+      <th id="logs-data" class="text-left py-3 px-6 uppercase font-semibold text-sm hover:cursor-pointer">
+        <span>Data</span>
+      </th>
+      <th id="logs-created-at" class="text-left py-3 px-6 uppercase font-semibold text-sm hover:cursor-pointer">
+        <span>Created_at</span>
+      </th>
+      <th id="logs-action-type" class="text-left py-3 px-6 uppercase font-semibold text-sm hover:cursor-pointer">
+        <span>Action Type</span>
+      </th>
+    </tr>
     </thead>
 
     <tbody class="text-gray-700">
-      <% logs.each do |log| %>
-        <tr>
-          <td class="text-left py-3 px-6"><%= log.user_id %></td>
-          <td class="text-left py-3 px-6"><%= log.data %></td>
-          <td class="text-left py-3 px-6"><%= log.created_at %></td>
-        </tr>
-      <% end %>
+    <% logs.each do |log| %>
+      <tr>
+        <td class="text-left py-3 px-6"><%= log.user_id %></td>
+        <td class="text-left py-3 px-6"><%= log.data %></td>
+        <td class="text-left py-3 px-6"><%= log.created_at %></td>
+        <td class="text-left py-3 px-6"><%= LogActionPresenter.new(log).action_type %></td>
+      </tr>
+    <% end %>
     </tbody>
   </table>
 </div>
