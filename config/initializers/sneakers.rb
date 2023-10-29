@@ -1,11 +1,11 @@
 require 'sneakers'
 
 bunny_connection_options = {
-  host: "localhost",
-  port: "5672",
+  host: A9n.host,
+  port: A9n.rabbitmq_port,
   vhost: "/",
-  username: "guest",
-  password: "guest"
+  username: A9n.rabbitmq_username,
+  password: A9n.rabbitmq_password
 }
 
 Sneakers.configure(
